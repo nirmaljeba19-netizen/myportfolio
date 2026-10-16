@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nirmal R — Resume</title>
+  <style>
+    body { font-family: 'Manrope', system-ui, sans-serif; margin:0; padding:2rem; background: linear-gradient(135deg,#f7f3ff,#e6fff6); color:#111; }
+    .container { max-width:900px; margin:0 auto; background:#fff; border-radius:16px; padding:28px; box-shadow:0 20px 50px rgba(12,17,35,0.08); }
+    header { display:flex; gap:18px; align-items:center; }
+    .avatar { width:84px; height:84px; border-radius:12px; background:linear-gradient(135deg,#8c6cff,#5ee8c4); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:800; font-size:28px; }
+    h1 { margin:0; font-size:22px; }
+    .meta { color:#475569; font-size:14px; }
+    .row { display:flex; gap:18px; margin-top:18px; }
+    .col { flex:1; }
+    .chip { display:inline-block; background:linear-gradient(90deg,#ff8b78,#ee8df6); color:#fff; padding:6px 10px; border-radius:999px; font-weight:700; margin:4px 6px 4px 0; }
+    h2 { margin-top:22px; font-size:18px; }
+    ul { margin:8px 0 0 18px; }
+    .download { margin-top:18px; display:flex; gap:10px; }
+    .btn { padding:10px 14px; border-radius:10px; text-decoration:none; font-weight:800; }
+    .btn.pdf { background:linear-gradient(90deg,#6bb7ff,#8c6cff); color:#061028; }
+    .btn.print { background:#111827; color:#fff; }
+    footer { margin-top:26px; color:#6b7280; font-size:13px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="avatar">NR</div>
+      <div>
+        <h1>Nirmal R</h1>
+        <div class="meta">CS & Design Student · Coimbatore, IN · nirmaljeba19@gmail.com</div>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col">
+        <h2>Summary</h2>
+        <p>Design-minded developer exploring human-centred interfaces and creative code. Comfortable with C/C++, Python, Java and front-end web development.</p>
+
+        <h2>Skills</h2>
+        <div>
+          <span class="chip">C & C++</span>
+          <span class="chip">Python</span>
+          <span class="chip">Java</span>
+          <span class="chip">UI/UX</span>
+          <span class="chip">Graphic design</span>
+        </div>
+
+        <h2>Education</h2>
+        <p>SNS Institutions — B.E. Computer Science & Design (2025 — Present)</p>
+      </div>
+      <div class="col">
+        <h2>Experience</h2>
+        <ul>
+          <li>InAmigos — Graphic design & social media marketing (Internship)</li>
+          <li>Fluid Hackathon — Prototype and pitch</li>
+        </ul>
+
+        <h2>Projects</h2>
+        <ul>
+          <li>Smart Resume Platform — interactive resume site</li>
+        </ul>
+
+        <div class="download">
+          <a class="btn pdf" href="assets/resume.pdf" download>Download PDF</a>
+          <a class="btn print" href="#" onclick="window.print();return false">Save as PDF</a>
+        </div>
+      </div>
+    </div>
+
+    <footer>Designed with depth and motion — manual, colourful resume.</footer>
+  </div>
+    <script>
+      // If opened with ?download=true, trigger print to allow saving as PDF
+      try {
+        const params = new URLSearchParams(location.search);
+        if (params.get('download') === 'true') {
+          window.addEventListener('load', () => {
+            // give browser a moment to render styles before print
+            setTimeout(() => window.print(), 400);
+          });
+        }
+      } catch (e) {}
+    </script>
+</body>
+</html>

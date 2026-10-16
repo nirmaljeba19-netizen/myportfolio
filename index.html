@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nirmal R — Computer Science and Design student portfolio focused on coding, design thinking, and creative technology.">
+  <title>Nirmal R | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <canvas id="bg-particles" aria-hidden="true"></canvas>
+
+  <div id="welcome-overlay" class="welcome-overlay" role="dialog" aria-modal="true" aria-label="Welcome to the portfolio">
+    <div class="welcome-card">
+      <div class="welcome-flex">
+        <div class="welcome-avatar">
+          <img src="assets/images/profile.jpg" alt="Nirmal R">
+        </div>
+        <div class="welcome-content">
+          <h2>Welcome</h2>
+          <h1>A portfolio you can <span class="gradient-text">step into.</span></h1>
+          <p class="lead">I’m Nirmal — a Computer Science &amp; Design student who turns curious ideas into thoughtful digital experiences.</p>
+          <div class="welcome-actions">
+            <button class="pill-btn primary" id="welcome-enter">Enter portfolio</button>
+            <button class="pill-btn ghost" id="welcome-resume">View resume</button>
+          </div>
+          <button class="text-btn" id="welcome-close">Continue to site</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="nav-bar">
+    <a class="brand" href="#home" data-page-link="home" aria-label="Go to Nirmal R portfolio home">
+      <span class="logo-dot"></span>
+      <span class="logo-text">Nirmal R</span>
+    </a>
+
+    <nav class="nav-links" id="primary-navigation" aria-label="Portfolio pages">
+      <a href="#home" data-page-link="home" data-i18n="nav.home" aria-current="page">Home</a>
+      <a href="#about" data-page-link="about" data-i18n="nav.about">About</a>
+      <a href="#skills" data-page-link="skills" data-i18n="nav.skills">Skills</a>
+      <a href="#education" data-page-link="education" data-i18n="nav.education">Education</a>
+      <a href="#projects" data-page-link="projects" data-i18n="nav.projects">Projects</a>
+      <a href="#certs" data-page-link="certs" data-i18n="nav.certificates">Certificates</a>
+      <a href="#experience" data-page-link="experience" data-i18n="nav.experience">Experience</a>
+      <a href="#contact" data-page-link="contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="language-switcher" aria-label="Language selector">
+        <label class="sr-only" for="language-switch">Language</label>
+        <select id="language-switch" aria-label="Select language">
+          <option value="en">EN</option>
+          <option value="hi">हिंदी</option>
+          <option value="ta">தமிழ்</option>
+        </select>
+      </div>
+      <div class="theme-switcher" aria-label="Theme selector">
+        <label class="sr-only" for="theme-picker">Theme</label>
+        <select id="theme-picker" aria-label="Select theme">
+          <option value="midnight">Midnight</option>
+          <option value="light">Light</option>
+          <option value="violet">Violet</option>
+          <option value="emerald">Emerald</option>
+          <option value="slate">Slate</option>
+        </select>
+      </div>
+      <a id="resume-link" class="pill-btn ghost resume-link" href="assets/manual-resume.html" target="_blank" rel="noopener">
+        <i class="ri-download-2-line"></i><span>Resume</span>
+      </a>
+    </div>
+
+    <button class="burger" id="burger" type="button" aria-label="Open page menu" aria-controls="primary-navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main class="portfolio-shell">
+    <div class="scene-label" aria-hidden="true">
+      <span class="scene-orbit"></span>
+      <span data-i18n="scene.label">Interactive portfolio</span>
+    </div>
+
+    <div class="page-stage" aria-live="polite">
+      <section id="home" class="portfolio-page page-home is-active" data-page="home" aria-labelledby="home-title" tabindex="-1">
+        <div class="page-surface reference-surface">
+          <div class="reference-hero-panel">
+            <div class="reference-copy">
+              <p class="reference-brand" data-i18n="hero.brand">NIRMAL R</p>
+              <h1 id="home-title" data-i18n="hero.title">BUILDING<br>SOFTWARE<br>WITH DESIGN IN MIND</h1>
+              <p class="reference-sub" data-i18n="hero.subtitle">Second-year Computer Science and Design Engineering student at SNS College of Technology, blending coding, design thinking, and creativity to build meaningful digital experiences.</p>
+            </div>
+
+            <div class="reference-stage">
+              <div class="reference-card">
+                <div class="reference-nav">
+                  <span class="nav-name">NIRMAL R</span>
+                  <span>ABOUT</span>
+                  <span>SKILLS</span>
+                  <span>PROJECTS</span>
+                  <span>EXPERIENCE</span>
+                  <span>CONTACT</span>
+                </div>
+
+                <div class="reference-visual">
+                  <div class="reference-watermark">CREATE</div>
+
+                  <div class="reference-text-block">
+                    <span class="mini-tag" data-i18n="hero.tag">B.E. CSD • DESIGN THINKING • DEVELOPMENT • INNOVATION</span>
+                    <h2 data-i18n="hero.heading">I BUILD SOLUTIONS THAT FEEL HUMAN.</h2>
+                    <p data-i18n="hero.description">I’m Nirmal, a Computer Science and Design student with a passion for programming, UI/UX, and creative problem-solving. I enjoy turning ideas into useful digital experiences through code, design, and collaboration.</p>
+
+                    <div class="reference-actions">
+                      <button class="pill-btn primary" type="button" data-open-page="contact" data-i18n="hero.ctaPrimary">Let’s Collaborate</button>
+                      <button class="pill-btn ghost" type="button" data-open-page="projects" data-i18n="hero.ctaSecondary">Explore My Work</button>
+                    </div>
+                  </div>
+
+                  <div class="reference-photo-wrap" aria-hidden="true">
+                    <img src="assets/images/profile.jpg" alt="Nirmal R portrait">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="explorer-wrap">
+          <div class="explorer-heading">
+            <div>
+              <p class="eyebrow" data-i18n="explorer.title">Choose a page</p>
+              <h2 data-i18n="explorer.subtitle">Where would you like to go?</h2>
+            </div>
+            <p data-i18n="explorer.description">Open any page directly — each one appears in its own 3D space.</p>
+          </div>
+          <div class="page-explorer">
+            <button class="portal-card tilt-card accent-violet" type="button" data-open-page="about">
+              <i class="ri-user-smile-line"></i><span>01</span><strong data-i18n="portal.about.title">About me</strong><small data-i18n="portal.about.small">My story &amp; approach</small>
+            </button>
+            <button class="portal-card tilt-card accent-mint" type="button" data-open-page="skills">
+              <i class="ri-bubble-chart-line"></i><span>02</span><strong data-i18n="portal.skills.title">Skills</strong><small data-i18n="portal.skills.small">What I’m learning</small>
+            </button>
+            <button class="portal-card tilt-card accent-coral" type="button" data-open-page="education">
+              <i class="ri-graduation-cap-line"></i><span>03</span><strong data-i18n="portal.education.title">Education</strong><small data-i18n="portal.education.small">Learning journey</small>
+            </button>
+            <button class="portal-card tilt-card accent-yellow" type="button" data-open-page="projects">
+              <i class="ri-layout-grid-line"></i><span>04</span><strong data-i18n="portal.projects.title">Projects</strong><small data-i18n="portal.projects.small">Things I’ve built</small>
+            </button>
+            <button class="portal-card tilt-card accent-blue" type="button" data-open-page="certs">
+              <i class="ri-award-line"></i><span>05</span><strong data-i18n="portal.certs.title">Certificates</strong><small data-i18n="portal.certs.small">Continuous learning</small>
+            </button>
+            <button class="portal-card tilt-card accent-pink" type="button" data-open-page="experience">
+              <i class="ri-briefcase-4-line"></i><span>06</span><strong data-i18n="portal.experience.title">Experience</strong><small data-i18n="portal.experience.small">Teams &amp; challenges</small>
+            </button>
+            <button class="portal-card tilt-card accent-violet" type="button" data-open-page="contact">
+              <i class="ri-send-plane-line"></i><span>07</span><strong data-i18n="portal.contact.title">Contact</strong><small data-i18n="portal.contact.small">Start a conversation</small>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="portfolio-page" data-page="about" aria-labelledby="about-title" tabindex="-1">
+        <div class="page-surface content-page">
+          <div class="page-topline">
+            <button class="back-button" type="button" data-open-page="home"><i class="ri-arrow-left-line"></i> All pages</button>
+            <span class="page-number">01 / 07</span>
+          </div>
+          <div class="page-heading split-heading">
+            <div><p class="eyebrow" data-i18n="about.eyebrow">About me</p><h2 id="about-title" data-i18n="about.title">A curious builder with a designer’s eye.</h2></div>
+            <p data-i18n="about.text">I care about the small decisions that make technology feel clear, useful and human.</p>
+          </div>
+          <div class="about-layout">
+            <div class="about-portrait tilt-card">
+              <img src="assets/images/profile.jpg" alt="Portrait of Nirmal R">
+              <div class="portrait-caption"><span data-i18n="about.card.student">Student</span><strong data-i18n="about.card.role">Developer in progress</strong></div>
+            </div>
+            <div class="about-content">
+              <p class="large-copy" data-i18n="about.large">I am a second-year Computer Science and Design Engineering student at SNS College of Technology, building practical skills in programming, design thinking, and creative technology while exploring how people interact with digital products.</p>
+              <div class="feature-list">
+                <article><i class="ri-lightbulb-flash-line"></i><div><h3 data-i18n="about.feature1.title">Design thinker</h3><p data-i18n="about.feature1.text">I approach problems with a user-first mindset, combining usability, clarity, and visual value.</p></div></article>
+                <article><i class="ri-team-line"></i><div><h3 data-i18n="about.feature2.title">Collaborative builder</h3><p data-i18n="about.feature2.text">I enjoy working in teams, sharing ideas, and turning concepts into outcomes that are both useful and engaging.</p></div></article>
+                <article><i class="ri-rocket-2-line"></i><div><h3 data-i18n="about.feature3.title">Curious learner</h3><p data-i18n="about.feature3.text">I’m growing through internships, hackathons, and hands-on projects in coding, graphic design, and digital experiences.</p></div></article>
+              </div>
+              <div class="inline-links">
+                <a href="mailto:nirmaljeba19@gmail.com"><i class="ri-mail-line"></i> nirmaljeba19@gmail.com</a>
+                <a href="tel:+916382558611"><i class="ri-phone-line"></i> +91 6382558611</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="portfolio-page" data-page="skills" aria-labelledby="skills-title" tabindex="-1">
+        <div class="page-surface content-page">
+          <div class="page-topline">
+            <button class="back-button" type="button" data-open-page="home"><i class="ri-arrow-left-line"></i> All pages</button>
+            <span class="page-number">02 / 07</span>
+          </div>
+          <div class="page-heading center-heading">
+            <p class="eyebrow" data-i18n="skills.eyebrow">Skills</p>
+            <h2 id="skills-title" data-i18n="skills.title">A growing creative toolkit.</h2>
+            <p data-i18n="skills.text">These circles come to life when you open this page.</p>
+          </div>
+          <div class="skill-grid" aria-label="My skills">
+            <article class="skill-card tilt-card"><i class="ri-code-box-line"></i><strong>C &amp; C++</strong></article>
+            <article class="skill-card tilt-card"><i class="ri-terminal-box-line"></i><strong>Python</strong></article>
+            <article class="skill-card tilt-card"><i class="ri-cpu-line"></i><strong>Java</strong></article>
+            <article class="skill-card tilt-card"><i class="ri-team-line"></i><strong>Leadership</strong></article>
+            <article class="skill-card tilt-card"><i class="ri-briefcase-4-line"></i><strong>Teamwork</strong></article>
+            <article class="skill-card tilt-card"><i class="ri-palette-line"></i><strong>Graphic design</strong></article>
+            <article class="skill-card tilt-card"><i class="ri-lightbulb-flash-line"></i><strong>Design Thinking</strong></article>
+            <article class="skill-card tilt-card"><i class="ri-layout-3-line"></i><strong>UI/UX</strong></article>
+            <article class="skill-card tilt-card"><i class="ri-megaphone-line"></i><strong>Social media marketing</strong></article>
+            <article class="skill-card tilt-card"><i class="ri-focus-3-line"></i><strong>Problem-solving</strong></article>
+            <article class="skill-card tilt-card"><i class="ri-presentation-line"></i><strong>Presentation</strong></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="education" class="portfolio-page" data-page="education" aria-labelledby="education-title" tabindex="-1">
+        <div class="page-surface content-page">
+          <div class="page-topline">
+            <button class="back-button" type="button" data-open-page="home"><i class="ri-arrow-left-line"></i> All pages</button>
+            <span class="page-number">03 / 07</span>
+          </div>
+          <div class="page-heading split-heading">
+            <div><p class="eyebrow" data-i18n="education.eyebrow">Education</p><h2 id="education-title" data-i18n="education.title">Learning with intent.</h2></div>
+            <p data-i18n="education.text">Every stage adds another layer to how I solve problems and create.</p>
+          </div>
+          <div class="journey-path">
+            <article class="journey-card tilt-card current">
+              <span class="journey-year" data-i18n="education.card1.year">2025 — Present</span>
+              <i class="ri-graduation-cap-line"></i>
+              <h3 data-i18n="education.card1.school">SNS Institutions</h3>
+              <p data-i18n="education.card1.degree">Bachelor of Engineering — Computer Science &amp; Design</p>
+              <strong data-i18n="education.card1.gpa">CGPA 7.75</strong>
+            </article>
+            <span class="journey-connector" aria-hidden="true"></span>
+            <article class="journey-card tilt-card">
+              <span class="journey-year" data-i18n="education.card2.year">2024 — 2025</span>
+              <i class="ri-school-line"></i>
+              <h3 data-i18n="education.card2.school">Maharishi Vidya Mandir</h3>
+              <p data-i18n="education.card2.degree">Higher Secondary (+2)</p>
+              <strong data-i18n="education.card2.gpa">80%</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="portfolio-page" data-page="projects" aria-labelledby="projects-title" tabindex="-1">
+        <div class="page-surface content-page">
+          <div class="page-topline">
+            <button class="back-button" type="button" data-open-page="home"><i class="ri-arrow-left-line"></i> All pages</button>
+            <span class="page-number">04 / 07</span>
+          </div>
+          <div class="page-heading split-heading">
+            <div><p class="eyebrow" data-i18n="projects.eyebrow">Projects</p><h2 id="projects-title" data-i18n="projects.title">Things I’m bringing to life.</h2></div>
+            <p data-i18n="projects.text">A focused look at work that joins clean interface design with useful functionality.</p>
+          </div>
+          <article class="project-showcase tilt-card">
+            <div class="project-visual"><span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span><div class="window-lines"><b></b><b></b><b></b></div><i class="ri-file-user-line"></i></div>
+            <div class="project-details">
+              <div class="tag-row"><span>Web</span><span>Solo</span><span>Live</span></div>
+              <h3 data-i18n="projects.card.title">Smart Resume Platform</h3>
+              <p data-i18n="projects.card.text">Interactive resume site that combines ATS-friendly structure with a polished, animated UI. It dynamically highlights skills and is easy to share through GitHub Pages.</p>
+              <p class="tech-line"><i class="ri-stack-line"></i> HTML · CSS · JavaScript</p>
+              <div class="project-actions">
+                <a class="pill-btn primary" href="https://nirmaljeba19-netizen.github.io/smart-resume-platform/" target="_blank" rel="noreferrer"><span data-i18n="projects.card.live">View live</span> <i class="ri-arrow-right-up-line"></i></a>
+                <a class="pill-btn ghost" href="https://github.com/nirmaljeba19-netizen/myportfolio.git" target="_blank" rel="noreferrer"><i class="ri-github-fill"></i> <span data-i18n="projects.card.code">Code</span></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="certs" class="portfolio-page" data-page="certs" aria-labelledby="certs-title" tabindex="-1">
+        <div class="page-surface content-page">
+          <div class="page-topline">
+            <button class="back-button" type="button" data-open-page="home"><i class="ri-arrow-left-line"></i> All pages</button>
+            <span class="page-number">05 / 07</span>
+          </div>
+          <div class="page-heading center-heading">
+            <p class="eyebrow" data-i18n="certs.eyebrow">Certificates</p>
+            <h2 id="certs-title" data-i18n="certs.title">Learning, documented.</h2>
+            <p data-i18n="certs.text">Credentials that reflect both technical foundations and human-centred thinking.</p>
+          </div>
+          <div class="certificate-grid">
+            <article class="certificate-card tilt-card"><div class="cert-icon"><i class="ri-code-box-line"></i></div><span>Offline</span><h3 data-i18n="certs.card1.title">C &amp; C++</h3><p data-i18n="certs.card1.text">Strong fundamentals in structured programming and data structures.</p></article>
+            <article class="certificate-card tilt-card"><div class="cert-icon"><i class="ri-shape-2-line"></i></div><span>Online</span><h3 data-i18n="certs.card2.title">IBM Enterprise Design Thinking Practitioner</h3><p data-i18n="certs.card2.text">Human-centred design, iteration and stakeholder alignment.</p></article>
+            <article class="certificate-card tilt-card"><div class="cert-icon"><i class="ri-robot-2-line"></i></div><span>Online</span><h3 data-i18n="certs.card3.title">Create Your LLM-Powered App Without Coding!</h3><p data-i18n="certs.card3.text">Simplilearn course on low-code AI apps, prompt design and deployment.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="portfolio-page" data-page="experience" aria-labelledby="experience-title" tabindex="-1">
+        <div class="page-surface content-page">
+          <div class="page-topline">
+            <button class="back-button" type="button" data-open-page="home"><i class="ri-arrow-left-line"></i> All pages</button>
+            <span class="page-number">06 / 07</span>
+          </div>
+          <div class="page-heading split-heading">
+            <div><p class="eyebrow" data-i18n="experience.eyebrow">Experience</p><h2 id="experience-title" data-i18n="experience.title">Learning by doing, together.</h2></div>
+            <p data-i18n="experience.text">Projects, internships and hackathons have helped turn theory into momentum.</p>
+          </div>
+          <div class="experience-stack">
+            <article class="experience-card tilt-card"><div class="experience-icon"><i class="ri-palette-line"></i></div><div><span data-i18n="experience.card1.role">Internship</span><h3 data-i18n="experience.card1.company">InAmigos</h3><h4 data-i18n="experience.card1.title">Graphic design &amp; social media marketing</h4><p data-i18n="experience.card1.text">Produced visuals and campaigns that improved engagement, while collaborating with marketing to create consistent brand stories.</p></div></article>
+            <article class="experience-card tilt-card"><div class="experience-icon"><i class="ri-trophy-line"></i></div><div><span data-i18n="experience.card2.role">Hackathon</span><h3 data-i18n="experience.card2.company">Fluid Hackathon</h3><p data-i18n="experience.card2.text">Built and pitched a prototype under time pressure, focusing on usability and clarity.</p></div></article>
+            <article class="experience-card tilt-card"><div class="experience-icon"><i class="ri-code-s-slash-line"></i></div><div><span data-i18n="experience.card3.role">Hackathon</span><h3 data-i18n="experience.card3.company">AlgoRhythm26</h3><h4 data-i18n="experience.card3.title">“Where Logic Meets Rhythm”</h4><p data-i18n="experience.card3.text">Explored algorithmic thinking blended with creative problem-solving in a team setting.</p></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="portfolio-page" data-page="contact" aria-labelledby="contact-title" tabindex="-1">
+        <div class="page-surface content-page contact-page">
+          <div class="page-topline">
+            <button class="back-button" type="button" data-open-page="home"><i class="ri-arrow-left-line"></i> All pages</button>
+            <span class="page-number">07 / 07</span>
+          </div>
+          <div class="contact-hero">
+            <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+            <h2 id="contact-title" data-i18n="contact.title">Have an idea? <span class="gradient-text">Let’s make it real.</span></h2>
+            <p data-i18n="contact.text">I’m always happy to connect over collaborative projects, creative experiments or opportunities to learn.</p>
+          </div>
+          <div class="contact-grid">
+            <a class="contact-card tilt-card" href="mailto:nirmaljeba19@gmail.com"><i class="ri-mail-line"></i><span data-i18n="contact.email">Email me</span><strong>nirmaljeba19@gmail.com</strong><em><span data-i18n="contact.email.cta">Start a conversation</span> <i class="ri-arrow-right-up-line"></i></em></a>
+            <a class="contact-card tilt-card" href="tel:+916382558611"><i class="ri-phone-line"></i><span data-i18n="contact.phone">Call me</span><strong>+91 6382558611</strong><em><span data-i18n="contact.phone.cta">Reach out</span> <i class="ri-arrow-right-up-line"></i></em></a>
+            <a class="contact-card tilt-card" href="https://www.linkedin.com/in/nirmal-r-" target="_blank" rel="noreferrer"><i class="ri-linkedin-fill"></i><span data-i18n="contact.linkedin">LinkedIn</span><strong>nirmal-r-</strong><em><span data-i18n="contact.linkedin.cta">Connect</span> <i class="ri-arrow-right-up-line"></i></em></a>
+            <a class="contact-card tilt-card" href="https://github.com/nirmaljeba19-netizen" target="_blank" rel="noreferrer"><i class="ri-github-fill"></i><span data-i18n="contact.github">GitHub</span><strong>nirmaljeba19-netizen</strong><em><span data-i18n="contact.github.cta">See my code</span> <i class="ri-arrow-right-up-line"></i></em></a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div class="ai-chat-widget" id="ai-chat-widget">
+    <button class="ai-chat-toggle" id="ai-chat-toggle" type="button" aria-expanded="false" aria-controls="ai-chat-panel">
+      <i class="ri-robot-2-line"></i>
+      <span>AI Assistant</span>
+    </button>
+
+    <div class="ai-chat-panel" id="ai-chat-panel" aria-live="polite">
+      <div class="ai-chat-header">
+        <div>
+          <p>Portfolio AI</p>
+          <strong>Nirmal R</strong>
+        </div>
+        <button type="button" class="ai-chat-close" id="ai-chat-close" aria-label="Close assistant">
+          <i class="ri-close-line"></i>
+        </button>
+      </div>
+
+      <div class="ai-chat-messages" id="ai-chat-messages">
+        <div class="ai-message bot">
+          Hi! I can tell you about Nirmal’s skills, projects, education, and experience.
+        </div>
+      </div>
+
+      <form class="ai-chat-form" id="ai-chat-form">
+        <input id="ai-chat-input" type="text" placeholder="Ask about the portfolio..." aria-label="Ask the portfolio assistant" autocomplete="off" />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Nirmal R · Designed with depth and motion.</p>
+    <div class="footer-links"><button type="button" data-open-page="home">All pages</button><a id="resume-link-footer" href="assets/manual-resume.html" target="_blank" rel="noopener">Resume</a></div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+python -m http.server 8000
